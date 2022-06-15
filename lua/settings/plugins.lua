@@ -152,5 +152,6 @@ return require('packer').startup(function(use)
 
 -- Dashboard
 use("goolord/alpha-nvim")
+use("rhysd/git-messenger.vim")
 
 end)

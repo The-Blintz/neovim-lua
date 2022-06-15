@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/the-blintz/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["git-messenger.vim"] = {
+    loaded = true,
+    path = "/home/the-blintz/.local/share/nvim/site/pack/packer/start/git-messenger.vim",
+    url = "https://github.com/rhysd/git-messenger.vim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/the-blintz/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",

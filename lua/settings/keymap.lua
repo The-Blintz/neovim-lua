@@ -7,6 +7,7 @@ map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
 
 map('n', '<leader>,', ':NvimTreeToggle<CR>', {noremap = true, silent = false})
 map('n', '<leader>r', ':NvimTreeRefresh<CR>', {noremap = true, silent = false})
+map('n', '<leader>m', ':GitMessenger<CR>', {noremap = true, silent = false})
 map('n', '<leader>n', ':NvimTreeFindFile<CR>', {noremap = true, silent = false})
 
 map('n', '<leader>k', ':BufferLineCycleNext<CR>', {noremap = true, silent = false})
