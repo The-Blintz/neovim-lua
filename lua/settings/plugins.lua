@@ -42,13 +42,17 @@ return require('packer').startup(function(use)
       -- using packer.nvim
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
 
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-          'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        }
-    }
+    use({
+      "kyazdani42/nvim-tree.lua",
+      -- config = function()
+      --   require("plugins.tree")
+      -- end,
+      -- devicons in lua
+      requires = { "kyazdani42/nvim-web-devicons" },
+    })
 
+   
+    
     use {'windwp/nvim-ts-autotag'}
     use {'p00f/nvim-ts-rainbow'}
     use {'windwp/nvim-autopairs'}
@@ -72,6 +76,8 @@ return require('packer').startup(function(use)
     use {'L3MON4D3/LuaSnip'}
     use {'rafamadriz/friendly-snippets'}
 
+    use { 'kyazdani42/nvim-web-devicons' }
+    use { 'ryanoasis/vim-devicons' }
     -- " For vsnip users.
     use {'hrsh7th/cmp-vsnip'}
     use {'hrsh7th/vim-vsnip'}
@@ -125,7 +131,7 @@ return require('packer').startup(function(use)
 		})
 
     -- Colorizer
-		use("norcalli/nvim-colorizer.lua")
+		-- use("norcalli/nvim-colorizer.lua")
 
 		-- jsonc file type for json - comments in json
 		use("kevinoid/vim-jsonc")
@@ -136,9 +142,23 @@ return require('packer').startup(function(use)
 			cmd = "CodeActionMenu",
 		})
 
+    -- -- Lua
+    -- use {
+    --   "folke/trouble.nvim",
+    --   requires = "kyazdani42/nvim-web-devicons",
+    --   config = function()
+    --     require("trouble").setup {
+    --       -- your configuration comes here
+    --       -- or leave it empty to use the default settings
+    --       -- refer to the configuration section below
+    --     }
+    --   end
+    -- }
+
     	-- firebase rules
 		use("delphinus/vim-firestore")
-
+    use {'akinsho/flutter-tools.nvim',
+    requires = 'nvim-lua/plenary.nvim'}
     -- -- sessions
 	-- 	use({
 	-- 		"rmagatti/auto-session",

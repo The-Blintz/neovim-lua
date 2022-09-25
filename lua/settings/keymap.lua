@@ -16,6 +16,12 @@ map('n', '<leader>j', ':BufferLineCyclePrev<CR>', {noremap = true, silent = fals
 map('n', '<leader>t', ':CommentToggle<CR>', {noremap = true, silent = false})
 map('v', '<leader>t', ':CommentToggle<CR>', {noremap = true, silent = false})
 
+map('n', '<leader>fi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]], {noremap = true, silent = false})
+map('n', '<leader>fd', [[<cmd>lua require('telescope.builtin').lsp_definitions()<cr>]], {noremap = true, silent = false})
+
+
+-- nnoremap('<leader>fi', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]])
+-- nnoremap('<leader>fd', [[<cmd>lua require('telescope.builtin').lsp_definitions()<cr>]])
 -- " These commands will navigate through buffers in order regardless of which mode you are using
 -- " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 -- nnoremap <silent>[b :BufferLineCycleNext<CR>
