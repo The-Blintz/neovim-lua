@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
 
     use {'VonHeikemen/lsp-zero.nvim'}
 
-    use {'neovim/nvim-lspconfig'}
+    -- use {'neovim/nvim-lspconfig'}
     use {'williamboman/nvim-lsp-installer'}
     use {'pbrisbin/vim-mkdir'}
 
@@ -131,7 +131,7 @@ return require('packer').startup(function(use)
 		})
 
     -- Colorizer
-		-- use("norcalli/nvim-colorizer.lua")
+		use("norcalli/nvim-colorizer.lua")
 
 		-- jsonc file type for json - comments in json
 		use("kevinoid/vim-jsonc")
@@ -142,33 +142,44 @@ return require('packer').startup(function(use)
 			cmd = "CodeActionMenu",
 		})
 
-    -- -- Lua
-    -- use {
-    --   "folke/trouble.nvim",
-    --   requires = "kyazdani42/nvim-web-devicons",
-    --   config = function()
-    --     require("trouble").setup {
-    --       -- your configuration comes here
-    --       -- or leave it empty to use the default settings
-    --       -- refer to the configuration section below
-    --     }
-    --   end
-    -- }
+    -- Lua
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
 
     	-- firebase rules
 		use("delphinus/vim-firestore")
     use {'akinsho/flutter-tools.nvim',
     requires = 'nvim-lua/plenary.nvim'}
     -- -- sessions
-	-- 	use({
-	-- 		"rmagatti/auto-session",
-	-- 		config = function()
-	-- 			require("auto-session").setup({
-	-- 				log_level = "info",
-	-- 				auto_session_suppress_dirs = { "~/", "~/Projects" },
-	-- 			})
-	-- 		end,
-	-- 	})
+		-- use({
+		-- 	"rmagatti/auto-session",
+		-- 	config = function()
+		-- 		require("auto-session").setup({
+		-- 			log_level = "info",
+		-- 			auto_session_suppress_dirs = { "~/", "~/Projects" },
+		-- 		})
+		-- 	end,
+		-- })
+
+    use({ -- Configure LSP client and Use an LSP server installer.
+    "neovim/nvim-lspconfig",
+    requires = {
+     "williamboman/nvim-lsp-installer", -- Installs servers within neovim
+     "onsails/lspkind-nvim",            -- adds vscode-like pictograms to neovim built-in lsp
+    },
+    config = function()
+     require("plugins.lsp")
+    end,
+   })
 
 -- Dashboard
 use("goolord/alpha-nvim")
